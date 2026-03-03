@@ -1,8 +1,7 @@
 class Estudiante:
-    def __init__(self,nombre,DNI,nota_bachillerato, notas_evau, nota_acceso, solicitud):
+    def __init__(self,nombre,DNI,nota_bachillerato, notas_evau, nota_acceso):
         self.nombre=nombre
         self.DNI=DNI
         self.nota_bachillerato=nota_bachillerato
         self.notas_evau=notas_evau
         self.nota_acceso=nota_acceso
-        self.solicitud=solicitud
