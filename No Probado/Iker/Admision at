@@ -1,8 +1,8 @@
 import atributos_estudiante
 class SistemaAdmision:
     
-    def __init__(self, nota_alumno, nota_mínima, grado_solicitado, Admitido):
-        self.nota_alumno = 1 #Necesito los atributos de los alumnos y las medias de bach para continuar
+    def __init__(self, nota_alumno, nota_mínima, grado_solicitado, Admitido, Media_bach):
+        self.nota_alumno = nota_alumno
         self.Admitido= Admitido
         self.nota_mínima= nota_mínima
-        self.nota_alumno= Media_bach
+        self.Media_bach= Media_bach
