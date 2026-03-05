@@ -8,7 +8,7 @@ class Universidad:
     def main():
         universidad1 = Universidad(
             nombre="UBU", ciudad="Burgos", tipo="Pública", grados=["Ingeniería Informática""Derecho""Medicina""Criminología""Farmacéutica""Ingeniería eléctrica""Ingeniería robótica""Física""Matemáticas""Artes""Historia de España""Lengua Castellana""Filosofía"]
-)
+        )
         universidad2 = Universidad(
             nombre="UPM", ciudad="Madrid", tipo="Pública", grados=["Astronomía""Enfermería""Criminología""Derecho""Geología""Ingeniería Informática""Aviación""Arquitectura""Historia de España""Filosofía""Medicina""Robótica"]
         )
