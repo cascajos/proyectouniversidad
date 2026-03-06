@@ -8,7 +8,27 @@ class Universidad:
 #Mostramos cómo se estructurarán los datos almacenados de las universidades
 def mostrar_ofertas(self):
     return f"Universidad: {self.nombre} ({self.tipo}) -Ciudad: {self.ciudad} \nGrados: {', '.join(self.grados)}\n"
+    from atribuniversidad import Universidad
+lista_universidad=[]
 
+def añadir_grado(Universidad):
+    Grado_buscado= input ("Introduce el grado que desees buscar, sin errores ortográficos: ")
+
+def buscar_grado(Universidad):
+    if Grado_buscado in Universidad.grados:
+        if Grado_buscado in universidad1.grados:
+            lista_universidad.append(universidad1.ciudad)
+        if Grado_buscado in universidad2.grados:
+            lista_universidad.append(universidad2.ciudad)
+        if Grado_buscado in universidad3.grados:
+            lista_universidad.append(universidad3.ciudad)
+        if Grado_buscado in universidad4.grados:
+            lista_universidad.append(universidad4.ciudad)
+        if Grado_buscado in universidad5.grados:
+            lista_universidad.append(universidad5.ciudad)
+        print(f"Tu grado está disponible en las universidades de {lista_universidad}")
+    else:
+        print("lo sentimos, tu grado no está disponible en nuestras universidades")
 #Ponemos toda la información necesaria de las universidades en el main
 def main():
     universidad1 = Universidad(
