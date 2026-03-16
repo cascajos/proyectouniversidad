@@ -21,7 +21,7 @@ class Estudiante:
         print(f"\nTu nota de acceso a la universidad es: {self.nota_acceso}")
         return self.nota_acceso
 
-    def calcular_nota_admision(self,grado):
+    '''def calcular_nota_admision(self,grado):
         nota_admision = self.nota_acceso
         if "Física" in grado:
             nota_admision += self.notas_evau["Física"] * grado["Física"]
@@ -34,11 +34,11 @@ class Estudiante:
         print("- Ponderación #2 pondera 0,2.")
         print("- Ponderación #3 pondera 0,1.")
         print(f"La nota de acceso para este grado es {nota_admision}")
-        return nota_admision
+        return nota_admision'''
 
 # -------------------------------------------------------------------------------------------------------
 
-def main():
+'''def main():
     print()
 
     mi_pau = {
@@ -66,4 +66,4 @@ def main():
     print()
 
 if __name__ == "__main__":
-    main()
+    main()'''
