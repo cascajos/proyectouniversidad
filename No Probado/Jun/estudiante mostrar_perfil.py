@@ -6,4 +6,3 @@ def mostrar_perfil(self):
         for asignatura,notas in self.notas_evau.items():
             print(f"  - {asignatura}: {notas}")
         print(f"Nota Bachillerato: {self.nota_bachillerato}")
-        print(f"Notas EVAU: {self.notas_evau}")
