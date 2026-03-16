@@ -20,9 +20,9 @@ def buscar_grado(lista_universidades):
     
     # Mostramos el resultado de la búsqueda
     if ciudades_encontradas:
-        print(f"\n✅ El grado '{grado_buscado}' está disponible en: {', '.join(ciudades_encontradas)}")
+        print(f"\n El grado '{grado_buscado}' está disponible en: {', '.join(ciudades_encontradas)}")
     else:
-        print(f"\n❌ Lo sentimos, el grado '{grado_buscado}' no está disponible en nuestras universidades.")
+        print(f"\n Lo sentimos, el grado '{grado_buscado}' no está disponible en nuestras universidades.")
 
 #Ponemos toda la información necesaria de las universidades en el main
 def main():
