@@ -9,6 +9,9 @@ class Universidad:
 def mostrar_ofertas(self):
     grados_formateados= ", ".join(self.grados)
     return f"Universidad: {self.nombre} ({self.tipo}) - Ciudad: {self.ciudad}\nGrados: {grados_formateados}\n"
+def añadir_grado(Universidad):
+    global Grado
+    Grado = input("Introduce el grado que desees buscar, sin errores ortográficos: ").strip()
 def buscar_grado(lista_universidades):
     grado_buscado = input("Introduce el grado que desees buscar, sin errores ortográficos: ")
     ciudades_encontradas = []
