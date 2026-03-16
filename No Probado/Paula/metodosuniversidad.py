@@ -7,34 +7,29 @@ class Universidad:
 
 #Mostramos cómo se estructurarán los datos almacenados de las universidades
 def mostrar_ofertas(self):
-    return f"Universidad: {self.nombre} ({self.tipo}) -Ciudad: {self.ciudad} \nGrados: {', '.join(self.grados)}\n"
-    from atribuniversidad import Universidad
-lista_universidad=[]
+    grados_formateados= ", ".join(self.grados)
+    return f"Universidad: {self.nombre} ({self.tipo}) - Ciudad: {self.ciudad}\nGrados: {grados_formateados}\n"
+def buscar_grado(lista_universidades):
+    grado_buscado = input("Introduce el grado que desees buscar, sin errores ortográficos: ")
+    ciudades_encontradas = []
 
-def añadir_grado(Universidad):
-    Grado_buscado= input ("Introduce el grado que desees buscar, sin errores ortográficos: ")
-
-def buscar_grado(Universidad):
-    if Grado_buscado in Universidad.grados:
-        if Grado_buscado in universidad1.grados:
-            lista_universidad.append(universidad1.ciudad)
-        if Grado_buscado in universidad2.grados:
-            lista_universidad.append(universidad2.ciudad)
-        if Grado_buscado in universidad3.grados:
-            lista_universidad.append(universidad3.ciudad)
-        if Grado_buscado in universidad4.grados:
-            lista_universidad.append(universidad4.ciudad)
-        if Grado_buscado in universidad5.grados:
-            lista_universidad.append(universidad5.ciudad)
-        print(f"Tu grado está disponible en las universidades de {lista_universidad}")
+    # Recorremos la lista de objetos Universidad
+    for uni in lista_universidades:
+        if grado_buscado in uni.grados:
+            ciudades_encontradas.append(uni.ciudad)
+    
+    # Mostramos el resultado de la búsqueda
+    if ciudades_encontradas:
+        print(f"\n✅ El grado '{grado_buscado}' está disponible en: {', '.join(ciudades_encontradas)}")
     else:
-        print("lo sentimos, tu grado no está disponible en nuestras universidades")
+        print(f"\n❌ Lo sentimos, el grado '{grado_buscado}' no está disponible en nuestras universidades.")
+
 #Ponemos toda la información necesaria de las universidades en el main
 def main():
     universidad1 = Universidad(
         nombre="UBU", ciudad="Burgos", tipo="Pública", grados=["Ingeniería Informática","Derecho","Medicina","Criminología","Farmacéutica","Ingeniería eléctrica",
             "Ingeniería robótica","Física","Matemáticas","Artes","Historia de España","Lengua Castellana","Filosofía"]
-        )
+    )
     universidad2 = Universidad(
         nombre="UPM", ciudad="Madrid", tipo="Pública", grados=["Astronomía","Enfermería","Criminología","Derecho","Geología","Ingeniería Informática","Aviación",
             "Arquitectura","Historia de España","Filosofía","Medicina","Robótica"]
@@ -44,9 +39,9 @@ def main():
         "Ingeniería Informática","Criminología","Economía"]
     )
     universidad4 = Universidad(
-        nombre="UPSAL", ciudad="Salamanca", tipo="Privada", grados=["Física","Medicina","Ingeniería Informática","Matemáticas","Derecho","Robótica",
+            nombre="UPSAL", ciudad="Salamanca", tipo="Privada", grados=["Física","Medicina","Ingeniería Informática","Matemáticas","Derecho","Robótica",
         "Geología","Filosofía","Criminología","Aviación"]   
-    )
+        )
     universidad5 = Universidad(
         nombre="UHU", ciudad="Huelva", tipo="Pública", grados=["Ingeniería Mecánica","Farmacia","Biología","Lengua","Filosofía","Ingeniería Informática",
         "Química","Historia de España","Matemáticas","Artes","Psicología","Artes","Física"]
@@ -59,5 +54,7 @@ def main():
     for uni in lista_universidades:
         print(uni.mostrar_ofertas())
 
-if __name__=="__main__":
-    main()
+    buscar_grado(lista_universidades)
+    
+    if __name__=="__main__":
+        main()
