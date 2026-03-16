@@ -1,11 +1,10 @@
 class Estudiante:
-    def __init__(self,nombre,DNI,nota_bachillerato, notas_evau, nota_acceso, solicitud):
+    def __init__(self,nombre,DNI,nota_bachillerato, notas_evau, nota_acceso):
         self.nombre = nombre
         self.DNI = DNI
         self.nota_bachillerato = nota_bachillerato
         self.notas_evau = notas_evau
         self.nota_acceso = nota_acceso
-        self.solicitud = solicitud
 
     def calcular_nota_acceso(self):
         suma_pau = 0
@@ -52,7 +51,7 @@ def main():
     }
     #Este diccionario es de las notas. Se explica por sí mismo. Procurad que las asignaturas de fase obligatoria sean siempre las primeras, da igual el orden.
 
-    manolo = Estudiante("Manolo Manolo","12345678X",9.7,mi_pau,0,"")
+    manolo = Estudiante("Manolo Manolo","12345678X",9.7,mi_pau,0)
 
     manolo.calcular_nota_acceso()
     print()
