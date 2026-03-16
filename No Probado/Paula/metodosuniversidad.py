@@ -11,22 +11,8 @@ def mostrar_ofertas(self):
     return f"Universidad: {self.nombre} ({self.tipo}) - Ciudad: {self.ciudad}\nGrados: {grados_formateados}\n"
 def añadir_grado(Universidad):
     global Grado
-    Grado = input("Introduce el grado que desees buscar, sin errores ortográficos: ").strip()
-def buscar_grado(lista_universidades):
-    grado_buscado = input("Introduce el grado que desees buscar, sin errores ortográficos: ")
-    ciudades_encontradas = []
-
-    # Recorremos la lista de objetos Universidad
-    for uni in lista_universidades:
-        if grado_buscado in uni.grados:
-            ciudades_encontradas.append(uni.ciudad)
     
-    # Mostramos el resultado de la búsqueda
-    if ciudades_encontradas:
-        print(f"\n El grado '{grado_buscado}' está disponible en: {', '.join(ciudades_encontradas)}")
-    else:
-        print(f"\n Lo sentimos, el grado '{grado_buscado}' no está disponible en nuestras universidades.")
-
+    Grado = input("Introduce el grado que desees buscar, sin errores ortográficos: ").strip()
 #Ponemos toda la información necesaria de las universidades en el main
 def main():
     universidad1 = Universidad(
@@ -49,7 +35,24 @@ def main():
         nombre="UHU", ciudad="Huelva", tipo="Pública", grados=["Ingeniería Mecánica","Farmacia","Biología","Lengua","Filosofía","Ingeniería Informática",
         "Química","Historia de España","Matemáticas","Artes","Psicología","Artes","Física"]
     )
+def buscar_grado(Universidad):
+    if Grado in Universidad.grados:
+        if Grado_buscado in universidad1.grados:
+            lista_universidad.append(universidad1.ciudad)
+    elif Grado in universidad2.grados:
+        lista_universidad.append(universidad2.ciudad)  
+    elif Grado in universidad3.grados:
+        lista_universidad.append(universidad3.ciudad)
+    elif Grado in universidad4.grados:
+        lista_universidad.append(universidad4.ciudad)
+    elif Grado in universidad5.grados:
+        print(f"Tu grado está disponible en la/s universidad/es de {lista_universidad}")
+    else:
+        print("lo sentimos, tu grado no está disponible en nuestras universidades")
 
+    for uni in lista_universidades:
+        if grado_buscado in uni.grados:
+            ciudades_encontradas.append(uni.ciudad)
 #Creamos una lista para almacenar las universidades
     lista_universidades =[universidad1, universidad2, universidad3, universidad4, universidad5]
 
