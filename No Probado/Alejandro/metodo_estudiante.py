@@ -21,6 +21,7 @@ class Estudiante:
         print(f"\nTu nota de acceso a la universidad es: {self.nota_acceso}")
         return self.nota_acceso
 
+#este metodo se elimina. es mejor dejarlo exclusivamente en la clase grado
     '''def calcular_nota_admision(self,grado):
         nota_admision = self.nota_acceso
         if "Física" in grado:
@@ -38,6 +39,7 @@ class Estudiante:
 
 # -------------------------------------------------------------------------------------------------------
 
+#esto es la prueba.
 '''def main():
     print()
 
