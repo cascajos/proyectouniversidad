@@ -7,6 +7,26 @@
         {
             "type": "LuaHelper-Debug",
             "request": "launch",
+            "name": "LuaHelper-DebugFile",
+            "description": "独立文件调试模式",
+            "luaPath": "",
+            "packagePath": [],
+            "luaFileExtension": "",
+            "connectionPort": 8818,
+            "stopOnEntry": true,
+            "useCHook": true
+        },
+
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "LuaHelper-Debug",
+            "request": "launch",
             "name": "LuaHelper-Attach",
             "description": "通用模式,通常调试项目请选择此模式",
             "cwd": "${workspaceFolder}",

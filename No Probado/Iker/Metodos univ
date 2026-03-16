@@ -1,8 +1,9 @@
-
 from atribuniversidad import Universidad
 lista_universidad=[]
 def añadir_grado(Universidad):
-    Grado_buscado= input ("Introduce el grado que desees buscar, sin errores ortográficos: ")
+    Grado_buscado = input ("Introduce el grado que desees buscar, sin errores ortográficos: ").strip()
+  
+
 
 def buscar_grado(Universidad):
     if Grado_buscado in Universidad.grados:
@@ -19,3 +20,10 @@ def buscar_grado(Universidad):
         print(f"Tu grado está disponible en las universidades de {lista_universidad}")
     else:
         print("lo sentimos, tu grado no está disponible en nuestras universidades")
+        
+def main():
+    añadir_grado(Universidad)
+    buscar_grado(Universidad)
+
+if __name__ == "__main__":
+    main()
