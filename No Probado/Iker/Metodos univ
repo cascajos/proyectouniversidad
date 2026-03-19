@@ -21,7 +21,7 @@ def buscar_grado(Universidad):
     else:
         print("lo sentimos, tu grado no está disponible en nuestras universidades")
         
-def main():
+def Encuentra_tugrado():
     añadir_grado(Universidad)
     buscar_grado(Universidad)
 
