@@ -21,12 +21,12 @@ class Estudiante:
         print(f"\nTu nota de acceso a la universidad es: {self.nota_acceso}")
         return self.nota_acceso
 
-    def mostrar_perfil(self,nota_acceso):
+    def mostrar_perfil(self,nota_acceso):#Muestra todos los datos del estudiante. Es necesario saber su nota de acceso.
         print("------Perfil------")
         print(f"Nombre: {self.nombre}")
         print(f"DNI: {self.DNI}")
         print("Notas EBAU:")
-        for asignatura,notas in self.notas_evau.items():
+        for asignatura,notas in self.notas_evau.items():#Imprime todas las notas de la EBAU
             print(f"  - {asignatura}: {notas}")
         print(f"Nota Bachillerato: {self.nota_bachillerato}")
         print(f"Nota de acceso: {nota_acceso}")
