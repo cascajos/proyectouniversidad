@@ -8,7 +8,7 @@ import random
         self.tipo = tipo  # "Publica" o "Privada"
         
     def __str__(self):
-        return f"{self.nombre} ({self.ciudad} - {self.tipo})"  '''
+        return f"{self.nombre} ({self.ciudad} - {self.tipo})" '''
 
 # 2. Clase para registrar los Grados (en singular es mejor practica)
 class Grado:
