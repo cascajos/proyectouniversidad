@@ -28,7 +28,7 @@ class Solicitud:
                 simbolo = "✓✓✓"
             elif nota > grado.nota_corte:
                 probabilidad = "MEDIA (40-80%)"
-                simbolo = "~~"
+                simbolo = "~~~"
             else:
                 probabilidad = "BAJA (<20%)"
                 simbolo = "✗✗✗"
