@@ -1,16 +1,8 @@
-class Solicitud:
-    def __init__(self, estudiante, preferencias):
-        """
-        estudiante: objeto estudiante
-        preferencias: lista de tuplas (grado, prioridad, nota)
-        """
-        self.estudiante = estudiante
-        self.preferencias = preferencias
-        self.grado_asignado = None
-        self.estado = "pendiente"
-
-    def __repr__(self):
-        return f"Solicitud({self.estudiante.nombre}, estado={self.estado}, asignado={self.grado_asignado})"
+class SistemaAdmision:
+    def __init__(self):
+        self.solicitudes = []   # lista de objetos Solicitud
+        self.grados = []        # grados disponibles en el sistema
+        self.estudiantes = []   # estudiantes registrados
 
 
 def procesar_admisiones(self):
