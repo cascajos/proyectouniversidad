@@ -19,7 +19,7 @@
 
         {
             "name": "Python Debugger: Current File",
-            "type": "launch.json${cwd}",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"

@@ -1,4 +1,4 @@
-import atributos_estudiante
+import Estudiante
 class SistemaAdmision:
     
     def __init__(self, nota_alumno, nota_mínima, grado_solicitado, Admitido, Media_bach):
@@ -6,3 +6,4 @@ class SistemaAdmision:
         self.Admitido= Admitido
         self.nota_mínima= nota_mínima
         self.Media_bach= Media_bach
+        Admitido=False
