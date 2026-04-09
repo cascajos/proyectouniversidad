@@ -1,27 +1,8 @@
 import random
 
-#---
-import sys
-import os
+#IMPORTANTE. HACE FALTA TAMBIÉN IMPORT DE ESTUDIANTE Y DE UNIVERSIDADES. Como todo estará luego integrado en la misma carpeta del main del programa, entonces se puede hacer con un simple from ... import ...
 
-ruta_estudiante = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Estudiante'))
-sys.path.append(ruta_estudiante)
-
-from Estudiante import Estudiante #Implementamos Estudiante de su archivo. IMPORTANTE!!!! A la hora de integrar todo, toda esta movida de antes solo sirve si Estudiante.py y grados.py están en carpetas distintas. Si están en la misma (como creo que van a estar) puedes hacerlo sencillamente como siempre.
-#---
-
-#from como_se_llame_universidad import Universidad #Por ahora, así, luego se cambia.
-
-class Universidad:
-    def __init__(self, nombre, ciudad, tipo):
-        self.nombre = nombre
-        self.ciudad = ciudad
-        self.tipo = tipo 
-        
-    def __str__(self):
-        return f"{self.nombre} ({self.ciudad} - {self.tipo})"
-
-# 2. Clase para registrar los Grados (en singular es mejor practica)
+# 1. Clase para registrar los Grados (en singular es mejor practica)
 class Grado:
     def __init__(self, nombre, universidad, plazas, nota_de_corte, rama, admitidos, lista_espera):
         self.nombre = nombre
@@ -79,7 +60,7 @@ class Grado:
         print("=" * 60)
             
 
-# 3. Funcion Principal para probar todo
+# 2. Funcion Principal para probar todo
 '''def main():
     # Creamos una universidad
     ups = Universidad("Universidad Pontificia", "Salamanca", "Privada")
