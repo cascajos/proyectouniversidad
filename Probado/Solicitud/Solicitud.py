@@ -6,18 +6,21 @@ class Solicitud:
         self.estado = estado
         self.grado_asignado = grado_asignado
     
+    #Método para agregar preferencias
     def agregar_preferencia(self,grado,prioridad):
         nota_admision=grado.calcular_nota_admision(self.estudiante)#Esta parte puede dar problemas, necesita la clase Grado y la clase Estudiante*
         lista=[grado,prioridad,nota_admision]
         self.preferencias.append(lista)
 
+    #Método para enseñar las preferencias ordenadas por prioridad
     def ordenar_preferencias(self):
         self.preferencias.sort(key=lambda x:x[2]) #(esto basicamente ordena las preferencias)
         print("--------Preferencias por orden--------")
         for i in range(0,len(self.preferencias)):#imprime las preferencias por orden
             print(f"Prioridad: {self.preferencias[i][1]}, Grado: {(self.preferencias[i][0]).nombre}, Nota de admisión: {self.preferencias[i][2]}")
     
-    def calcular_probabilidades(self): #este es el método para calcular la probabilidad de entrada a grado de preferencia
+    #Este es el método para calcular la probabilidad de entrada a grado de preferencia
+    def calcular_probabilidades(self): 
         print("\n" + "=" * 60)
         print("ANÁLISIS DE PROBABILIDADES")
         print("=" * 60)
