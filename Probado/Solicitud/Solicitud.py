@@ -10,7 +10,7 @@ class Solicitud:
     def agregar_preferencia(self,grado,prioridad):
         nota_admision=grado.calcular_nota_admision(self.estudiante)#Esta parte puede dar problemas, necesita la clase Grado y la clase Estudiante*
         lista=[grado,prioridad,nota_admision]
-        self.preferencias.append(lista)
+        self.preferencias.append(lista)#Agrega la preferencia a la lista
 
     #Método para enseñar las preferencias ordenadas por prioridad
     def ordenar_preferencias(self):
