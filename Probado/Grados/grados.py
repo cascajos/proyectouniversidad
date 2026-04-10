@@ -251,7 +251,7 @@ def main():
     grado3_8.definir_ponderacion("Física", 0.2)
 
     grado3_9.definir_ponderacion("Historia", 0.2)
-    grado3_9.definir_ponderacion("Matemáticas Aplicadas", 0.1)
+    grado3_9.definir_ponderacion("Matemáticas", 0.1)
 
     grado3_10.definir_ponderacion("Matemáticas", 0.2)
     grado3_10.definir_ponderacion("Economía", 0.2)
