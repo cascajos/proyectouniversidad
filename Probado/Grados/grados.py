@@ -105,7 +105,7 @@ def main():
     grado2_7 = Grado("Aviación", universidad2, 60, 11.5, "Ingeniería", {}, {})
     grado2_8 = Grado("Arquitectura", universidad2, 80, 10.0, "Ingeniería", {}, {})
     grado2_9 = Grado("Historia de España", universidad2, 60, 7.0, "Artes y Humanidades", {}, {})
-    grado2_10 = Grado("Filosofía", universidad2, 50, 6.5, "Artes y Humanidades", {}, {}),
+    grado2_10 = Grado("Filosofía", universidad2, 50, 6.5, "Artes y Humanidades", {}, {})
     grado2_11 = Grado("Medicina", universidad2, 150, 13.0, "Ciencias de la Salud", {}, {})
     grado2_12 = Grado("Robótica", universidad2, 60, 11.2, "Ingeniería", {}, {})
 
