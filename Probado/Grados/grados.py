@@ -1,5 +1,17 @@
 import random
 
+import sys
+import os
+
+ruta_estudiante = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'Estudiante'))
+sys.path.append(ruta_estudiante)
+
+from Estudiante import Estudiante
+
+ruta_universidad = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'metodosuniversidafinal'))
+sys.path.append(ruta_universidad)
+from metodosuniversidadfinal import Universidad
+
 #IMPORTANTE. HACE FALTA TAMBIÉN IMPORT DE ESTUDIANTE Y DE UNIVERSIDADES. Como todo estará luego integrado en la misma carpeta del main del programa, entonces se puede hacer con un simple from ... import ...
 
 # 1. Clase para registrar los Grados (en singular es mejor practica)
@@ -61,8 +73,18 @@ class Grado:
             
 
 # 2. Funcion Principal para probar todo
-'''def main():
+def main():
     # Creamos una universidad
+
+    universidad1 = Universidad("UBU", "Burgos", "Pública", ["Ingeniería Informática","Derecho","Medicina","Criminología","Farmacéutica","Ingeniería eléctrica", "Ingeniería robótica","Física","Matemáticas","Artes","Historia de España","Lengua Castellana","Filosofía"])
+    universidad2 = Universidad("UPM", "Madrid", "Pública", ["Astronomía","Enfermería","Criminología","Derecho","Geología","Ingeniería Informática","Aviación", "Arquitectura","Historia de España","Filosofía","Medicina","Robótica"])
+    universidad3 = Universidad("UPV", "Bilbao", "Pública", ["Derecho","Farmacia","Ingeniería Electrónica","Mecánica","Matemáticas","Arte","Biología", "Ingeniería Informática","Criminología","Economía"])
+    universidad4 = Universidad("USAL", "Salamanca", "Pública", ["Física","Medicina","Ingeniería Informática","Matemáticas","Derecho","Robótica", "Geología","Filosofía","Criminología","Aviación"])
+    universidad5 = Universidad("UHU", "Huelva", "Pública", ["Ingeniería Mecánica","Farmacia","Biología","Lengua","Filosofía","Ingeniería Informática", "Química","Historia de España","Matemáticas","Artes","Psicología","Física"])
+
+    grado1_1 = Grado("Ingeniería Informática")
+
+
     ups = Universidad("Universidad Pontificia", "Salamanca", "Privada")
     
     # Creamos el grado pasandole la universidad
@@ -109,4 +131,4 @@ class Grado:
     mu.actualizar_nota_corte(demanda_alta = True)
 
 if __name__ == "__main__":
-    main()'''
+    main()
