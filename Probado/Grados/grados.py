@@ -82,10 +82,251 @@ def main():
     universidad4 = Universidad("USAL", "Salamanca", "Pública", ["Física","Medicina","Ingeniería Informática","Matemáticas","Derecho","Robótica", "Geología","Filosofía","Criminología","Aviación"])
     universidad5 = Universidad("UHU", "Huelva", "Pública", ["Ingeniería Mecánica","Farmacia","Biología","Lengua","Filosofía","Ingeniería Informática", "Química","Historia de España","Matemáticas","Artes","Psicología","Física"])
 
-    grado1_1 = Grado("Ingeniería Informática")
+    grado1_1 = Grado("Ingeniería Informática", universidad1, 80, 8.5, "Ingeniería", {}, {})
+    grado1_2 = Grado("Derecho", universidad1, 100, 7.2, "Ciencias Sociales", {}, {})
+    grado1_3 = Grado("Medicina", universidad1, 120, 12.5, "Ciencias de la Salud", {}, {})
+    grado1_4 = Grado("Criminología", universidad1, 60, 9.0, "Ciencias Sociales", {}, {})
+    grado1_5 = Grado("Farmacéutica", universidad1, 90, 10.8, "Ciencias de la Salud", {}, {})
+    grado1_6 = Grado("Ingeniería Eléctrica", universidad1, 70, 7.8, "Ingeniería", {}, {})
+    grado1_7 = Grado("Ingeniería Robótica", universidad1, 60, 9.5, "Ingeniería", {}, {})
+    grado1_8 = Grado("Física", universidad1, 50, 9.2, "Ciencias", {}, {})
+    grado1_9 = Grado("Matemáticas", universidad1, 60, 9.0, "Ciencias", {}, {})
+    grado1_10 = Grado("Artes", universidad1, 40, 6.5, "Artes y Humanidades", {}, {})
+    grado1_11 = Grado("Historia de España", universidad1, 50, 6.8, "Artes y Humanidades", {}, {})
+    grado1_12 = Grado("Lengua Castellana", universidad1, 50, 6.7, "Artes y Humanidades", {}, {})
+    grado1_13 = Grado("Filosofía", universidad1, 40, 6.3, "Artes y Humanidades", {}, {})
 
+    grado2_1 = Grado("Astronomía", universidad2, 40, 10.5, "Ciencias", {}, {})
+    grado2_2 = Grado("Enfermería", universidad2, 90, 10.2, "Ciencias de la Salud", {}, {})
+    grado2_3 = Grado("Criminología", universidad2, 70, 9.3, "Ciencias Sociales", {}, {})
+    grado2_4 = Grado("Derecho", universidad2, 120, 8.0, "Ciencias Sociales", {}, {})
+    grado2_5 = Grado("Geología", universidad2, 50, 7.5, "Ciencias", {}, {})
+    grado2_6 = Grado("Ingeniería Informática", universidad2, 100, 10.8, "Ingeniería", {}, {})
+    grado2_7 = Grado("Aviación", universidad2, 60, 11.5, "Ingeniería", {}, {})
+    grado2_8 = Grado("Arquitectura", universidad2, 80, 10.0, "Ingeniería", {}, {})
+    grado2_9 = Grado("Historia de España", universidad2, 60, 7.0, "Artes y Humanidades", {}, {})
+    grado2_10 = Grado("Filosofía", universidad2, 50, 6.5, "Artes y Humanidades", {}, {}),
+    grado2_11 = Grado("Medicina", universidad2, 150, 13.0, "Ciencias de la Salud", {}, {})
+    grado2_12 = Grado("Robótica", universidad2, 60, 11.2, "Ingeniería", {}, {})
 
-    ups = Universidad("Universidad Pontificia", "Salamanca", "Privada")
+    grado3_1 = Grado("Derecho", universidad3, 90, 7.5, "Ciencias Sociales", {}, {})
+    grado3_2 = Grado("Farmacia", universidad3, 80, 10.5, "Ciencias de la Salud", {}, {})
+    grado3_3 = Grado("Ingeniería Electrónica", universidad3, 70, 8.2, "Ingeniería", {}, {})
+    grado3_4 = Grado("Mecánica", universidad3, 80, 8.0, "Ingeniería", {}, {})
+    grado3_5 = Grado("Matemáticas", universidad3, 60, 9.1, "Ciencias", {}, {})
+    grado3_6 = Grado("Arte", universidad3, 50, 6.8, "Artes y Humanidades", {}, {})
+    grado3_7 = Grado("Biología", universidad3, 70, 9.5, "Ciencias", {}, {})
+    grado3_8 = Grado("Ingeniería Informática", universidad3, 90, 10.2, "Ingeniería", {}, {})
+    grado3_9 = Grado("Criminología", universidad3, 60, 9.0, "Ciencias Sociales", {}, {})
+    grado3_10 = Grado("Economía", universidad3, 100, 7.8, "Ciencias Sociales", {}, {})
+
+    grado4_1 = Grado("Física", universidad4, 50, 9.3, "Ciencias", {}, {})
+    grado4_2 = Grado("Medicina", universidad4, 140, 12.8, "Ciencias de la Salud", {}, {})
+    grado4_3 = Grado("Ingeniería Informática", universidad4, 80, 9.8, "Ingeniería", {}, {})
+    grado4_4 = Grado("Matemáticas", universidad4, 60, 9.0, "Ciencias", {}, {})
+    grado4_5 = Grado("Derecho", universidad4, 100, 7.4, "Ciencias Sociales", {}, {})
+    grado4_6 = Grado("Robótica", universidad4, 50, 10.5, "Ingeniería", {}, {})
+    grado4_7 = Grado("Geología", universidad4, 40, 7.2, "Ciencias", {}, {})
+    grado4_8 = Grado("Filosofía", universidad4, 50, 6.4, "Artes y Humanidades", {}, {})
+    grado4_9 = Grado("Criminología", universidad4, 60, 9.1, "Ciencias Sociales", {}, {})
+    grado4_10 = Grado("Aviación", universidad4, 50, 11.0, "Ingeniería", {}, {})
+
+    grado5_1 = Grado("Ingeniería Mecánica", universidad5, 70, 7.9, "Ingeniería", {}, {})
+    grado5_2 = Grado("Farmacia", universidad5, 80, 10.3, "Ciencias de la Salud", {}, {})
+    grado5_3 = Grado("Biología", universidad5, 60, 9.2, "Ciencias", {}, {})
+    grado5_4 = Grado("Lengua", universidad5, 50, 6.6, "Artes y Humanidades", {}, {})
+    grado5_5 = Grado("Filosofía", universidad5, 40, 6.2, "Artes y Humanidades", {}, {})
+    grado5_6 = Grado("Ingeniería Informática", universidad5, 80, 9.5, "Ingeniería", {}, {})
+    grado5_7 = Grado("Química", universidad5, 60, 9.0, "Ciencias", {}, {})
+    grado5_8 = Grado("Historia de España", universidad5, 50, 6.7, "Artes y Humanidades", {}, {})
+    grado5_9 = Grado("Matemáticas", universidad5, 60, 8.8, "Ciencias", {}, {})
+    grado5_10 = Grado("Artes", universidad5, 40, 6.5, "Artes y Humanidades", {}, {})
+    grado5_11 = Grado("Psicología", universidad5, 90, 10.0, "Ciencias de la Salud", {}, {})
+    grado5_12 = Grado("Física", universidad5, 50, 9.1, "Ciencias", {}, {})
+
+    grado1_1.definir_ponderacion("Matemáticas", 0.2)
+    grado1_1.definir_ponderacion("Física", 0.2)
+    grado1_1.definir_ponderacion("Tecnología Industrial II", 0.1)
+
+    grado1_2.definir_ponderacion("Historia", 0.2)
+    grado1_2.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+
+    grado1_3.definir_ponderacion("Biología", 0.2)
+    grado1_3.definir_ponderacion("Química", 0.2)
+    grado1_3.definir_ponderacion("Matemáticas", 0.1)
+
+    grado1_4.definir_ponderacion("Historia", 0.2)
+    grado1_4.definir_ponderacion("Matemáticas", 0.1)
+
+    grado1_5.definir_ponderacion("Química", 0.2)
+    grado1_5.definir_ponderacion("Biología", 0.2)
+
+    grado1_6.definir_ponderacion("Matemáticas", 0.2)
+    grado1_6.definir_ponderacion("Física", 0.2)
+
+    grado1_7.definir_ponderacion("Matemáticas", 0.2)
+    grado1_7.definir_ponderacion("Física", 0.2)
+    grado1_7.definir_ponderacion("Tecnología Industrial II", 0.1)
+
+    grado1_8.definir_ponderacion("Matemáticas", 0.2)
+    grado1_8.definir_ponderacion("Física", 0.2)
+
+    grado1_9.definir_ponderacion("Matemáticas", 0.2)
+    grado1_9.definir_ponderacion("Física", 0.1)
+
+    grado1_10.definir_ponderacion("Historia del Arte", 0.2)
+    grado1_10.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado1_11.definir_ponderacion("Historia", 0.2)
+    grado1_11.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+
+    grado1_12.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+    grado1_12.definir_ponderacion("Latín", 0.2)
+
+    grado1_13.definir_ponderacion("Historia", 0.2)
+    grado1_13.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    #---
+
+    grado2_1.definir_ponderacion("Matemáticas", 0.2)
+    grado2_1.definir_ponderacion("Física", 0.2)
+
+    grado2_2.definir_ponderacion("Biología", 0.2)
+    grado2_2.definir_ponderacion("Química", 0.2)
+
+    grado2_3.definir_ponderacion("Historia", 0.2)
+    grado2_3.definir_ponderacion("Matemáticas", 0.1)
+
+    grado2_4.definir_ponderacion("Historia", 0.2)
+    grado2_4.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+
+    grado2_5.definir_ponderacion("Geología", 0.2)
+    grado2_5.definir_ponderacion("Química", 0.1)
+
+    grado2_6.definir_ponderacion("Matemáticas", 0.2)
+    grado2_6.definir_ponderacion("Física", 0.2)
+
+    grado2_7.definir_ponderacion("Matemáticas", 0.2)
+    grado2_7.definir_ponderacion("Física", 0.2)
+
+    grado2_8.definir_ponderacion("Matemáticas", 0.2)
+    grado2_8.definir_ponderacion("Dibujo Técnico II", 0.2)
+
+    grado2_9.definir_ponderacion("Historia", 0.2)
+    grado2_9.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado2_10.definir_ponderacion("Historia", 0.2)
+    grado2_10.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado2_11.definir_ponderacion("Biología", 0.2)
+    grado2_11.definir_ponderacion("Química", 0.2)
+
+    grado2_12.definir_ponderacion("Matemáticas", 0.2)
+    grado2_12.definir_ponderacion("Física", 0.2)
+
+    #---
+
+    grado3_1.definir_ponderacion("Historia", 0.2)
+    grado3_1.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+
+    grado3_2.definir_ponderacion("Química", 0.2)
+    grado3_2.definir_ponderacion("Biología", 0.2)
+
+    grado3_3.definir_ponderacion("Matemáticas", 0.2)
+    grado3_3.definir_ponderacion("Física", 0.2)
+
+    grado3_4.definir_ponderacion("Matemáticas", 0.2)
+    grado3_4.definir_ponderacion("Física", 0.2)
+
+    grado3_5.definir_ponderacion("Matemáticas", 0.2)
+    grado3_5.definir_ponderacion("Física", 0.1)
+
+    grado3_6.definir_ponderacion("Historia del Arte", 0.2)
+    grado3_6.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado3_7.definir_ponderacion("Biología", 0.2)
+    grado3_7.definir_ponderacion("Química", 0.1)
+
+    grado3_8.definir_ponderacion("Matemáticas", 0.2)
+    grado3_8.definir_ponderacion("Física", 0.2)
+
+    grado3_9.definir_ponderacion("Historia", 0.2)
+    grado3_9.definir_ponderacion("Matemáticas Aplicadas", 0.1)
+
+    grado3_10.definir_ponderacion("Matemáticas", 0.2)
+    grado3_10.definir_ponderacion("Economía", 0.2)
+
+    #---
+
+    grado4_1.definir_ponderacion("Matemáticas", 0.2)
+    grado4_1.definir_ponderacion("Física", 0.2)
+
+    grado4_2.definir_ponderacion("Biología", 0.2)
+    grado4_2.definir_ponderacion("Química", 0.2)
+
+    grado4_3.definir_ponderacion("Matemáticas", 0.2)
+    grado4_3.definir_ponderacion("Física", 0.2)
+
+    grado4_4.definir_ponderacion("Matemáticas", 0.2)
+    grado4_4.definir_ponderacion("Física", 0.1)
+
+    grado4_5.definir_ponderacion("Historia", 0.2)
+    grado4_5.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+
+    grado4_6.definir_ponderacion("Matemáticas", 0.2)
+    grado4_6.definir_ponderacion("Física", 0.2)
+
+    grado4_7.definir_ponderacion("Geología", 0.2)
+    grado4_7.definir_ponderacion("Química", 0.1)
+
+    grado4_8.definir_ponderacion("Historia", 0.2)
+    grado4_8.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado4_9.definir_ponderacion("Historia", 0.2)
+    grado4_9.definir_ponderacion("Matemáticas", 0.1)
+
+    grado4_10.definir_ponderacion("Matemáticas", 0.2)
+    grado4_10.definir_ponderacion("Física", 0.2)
+
+    #---
+
+    grado5_1.definir_ponderacion("Matemáticas", 0.2)
+    grado5_1.definir_ponderacion("Física", 0.2)
+    
+    grado5_2.definir_ponderacion("Química", 0.2)
+    grado5_2.definir_ponderacion("Biología", 0.2)
+
+    grado5_3.definir_ponderacion("Biología", 0.2)
+    grado5_3.definir_ponderacion("Química", 0.1)
+
+    grado5_4.definir_ponderacion("Lengua Castellana y Literatura", 0.2)
+    grado5_4.definir_ponderacion("Historia", 0.1)
+
+    grado5_5.definir_ponderacion("Historia", 0.2)
+    grado5_5.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado5_6.definir_ponderacion("Matemáticas", 0.2)
+    grado5_6.definir_ponderacion("Física", 0.2)
+
+    grado5_7.definir_ponderacion("Química", 0.2)
+    grado5_7.definir_ponderacion("Matemáticas", 0.1)
+
+    grado5_8.definir_ponderacion("Historia", 0.2)
+    grado5_8.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado5_9.definir_ponderacion("Matemáticas", 0.2)
+    grado5_9.definir_ponderacion("Física", 0.1)
+
+    grado5_10.definir_ponderacion("Historia del Arte", 0.2)
+    grado5_10.definir_ponderacion("Lengua Castellana y Literatura", 0.1)
+
+    grado5_11.definir_ponderacion("Biología", 0.2)
+    grado5_11.definir_ponderacion("Química", 0.2)
+
+    grado5_12.definir_ponderacion("Matemáticas", 0.2)
+    grado5_12.definir_ponderacion("Física", 0.2)
+
+    '''ups = Universidad("Universidad Pontificia", "Salamanca", "Privada")
     
     # Creamos el grado pasandole la universidad
     mu = Grado("Ingenieria Informatica", ups, 20, 9.5, ["Ingeniería","Informática","Ciencias"],{},{})
@@ -128,7 +369,7 @@ def main():
 
     # Simulamos que pasa con la nota de corte al año siguiente
     print("\n--- Actualizacion de notas por demanda ---")
-    mu.actualizar_nota_corte(demanda_alta = True)
+    mu.actualizar_nota_corte(demanda_alta = True)'''
 
 if __name__ == "__main__":
     main()
