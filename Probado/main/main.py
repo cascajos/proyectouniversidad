@@ -1,60 +1,124 @@
-# main.py (versión actualizada para pedir opcionales)
-
 from Estudiante import Estudiante
 from metodosuniversidadfinal import LISTA_UNIVERSIDADES, añadir_grado, buscar_grado
+from grados import LISTA_GRADOS
+from Solicitud import Solicitud
+from claseadmisionfinal import SistemaAdmision
 
-def menu_principal():
-    print("\n" + "="*40)
-    print("   SISTEMA DE ACCESO UNIVERSITARIO")
-    print("="*40)
-    print("1. Calcular nota de acceso")
-    print("2. Buscar grados disponibles")
-    print("3. Salir")
-    print("="*40)
+sistema = SistemaAdmision()
+sistema.grados = LISTA_GRADOS
 
-def calcular_nota():
-    print("\n=== CÁLCULO DE NOTA DE ACCESO ===")
+def registrar_estudiante():
+    print("\n--- REGISTRO DE ESTUDIANTE ---")
     nombre = input("Nombre: ")
-    DNI = input("DNI: ")
-    nota_bachillerato = float(input("Nota media de Bachillerato: "))
-    
-    # Fase obligatoria (4 asignaturas)
-    print("\n--- FASE OBLIGATORIA ---")
-    print("Introduce las notas de las 4 asignaturas obligatorias:")
-    notas_evau = {}
-    for i in range(4):
-        asignatura = input(f"Asignatura {i+1}: ")
-        nota = float(input(f"Nota de {asignatura}: "))
-        notas_evau[asignatura] = nota
-    
-    # Fase opcional (2 asignaturas)
-    print("\n--- FASE OPCIONAL ---")
-    print("Introduce las notas de 2 asignaturas opcionales (ponderan 0.2 cada una):")
+    dni = input("DNI: ")
+    nota_bach = float(input("Nota media de Bachillerato: "))
+
+    print("\nIntroduce las notas de las asignaturas TRONCALES (0-10):")
+    troncales = ["Lengua", "Historia/Filosofia", "Ingles", "Matematicas"]
+    notas = {}
+    for asig in troncales:
+        nota = float(input(f"{asig}: "))
+        notas[asig] = nota
+
+    print("\nAsignaturas OPCIONALES (hasta 2, puedes dejar vacío):")
+    opciones = ["Fisica", "Quimica", "Biologia", "Dibujo Técnico", "Economía", "Matematicas CCSS", "Tecnología"]
     for i in range(2):
-        asignatura = input(f"Asignatura opcional {i+1}: ")
-        nota = float(input(f"Nota de {asignatura}: "))
-        notas_evau[asignatura] = nota
-    
-    estudiante = Estudiante(nombre, DNI, nota_bachillerato, notas_evau, 0)
+        asig = input(f"Opción {i+1} (de {opciones} o Enter para saltar): ").strip()
+        if asig == "":
+            break
+        if asig in opciones:
+            nota = float(input(f"Nota en {asig}: "))
+            notas[asig] = nota
+        else:
+            print("Asignatura no reconocida, se omite.")
+
+    estudiante = Estudiante(nombre, dni, nota_bach, notas, 0)
     estudiante.calcular_nota_acceso()
-    estudiante.mostrar_perfil(estudiante.nota_acceso)
+    sistema.estudiantes.append(estudiante)
+    print("Estudiante registrado.")
+    return estudiante
 
-def buscar_grados():
-    print("\n=== BÚSQUEDA DE GRADOS ===")
-    grado = añadir_grado()
-    buscar_grado(LISTA_UNIVERSIDADES, grado)
+def crear_solicitud():
+    if not sistema.estudiantes:
+        print("Primero registra al estudiante.")
+        return
+    dni = input("DNI del estudiante: ")
+    estudiante = next((e for e in sistema.estudiantes if e.DNI == dni), None)
+    if not estudiante:
+        print("No encontrado.")
+        return
 
-# Programa principal
-while True:
-    menu_principal()
-    opcion = input("Elige una opción (1-3): ")
-    
-    if opcion == "1":
-        calcular_nota()
-    elif opcion == "2":
-        buscar_grados()
-    elif opcion == "3":
-        print("\n¡Hasta luego!")
-        break
+    solicitud = Solicitud(estudiante)
+    print("\nGrados disponibles:")
+    for i, grado in enumerate(LISTA_GRADOS):
+        print(f"{i+1}. {grado.nombre} - {grado.universidad.nombre} (Corte: {grado.nota_de_corte})")
+
+    while True:
+        op = input("Número del grado a añadir (0 para terminar): ")
+        if op == "0":
+            break
+        try:
+            idx = int(op) - 1
+            if 0 <= idx < len(LISTA_GRADOS):
+                grado = LISTA_GRADOS[idx]
+                prioridad = len(solicitud.preferencias) + 1
+                solicitud.agregar_preferencia(grado, prioridad)
+                print(f"Añadido: {grado.nombre} (prioridad {prioridad})")
+            else:
+                print("Número inválido.")
+        except ValueError:
+            print("Introduce un número.")
+
+    if solicitud.preferencias:
+        sistema.solicitudes.append(solicitud)
+        solicitud.calcular_probabilidades()
+        solicitud.mostrar_resumen()
     else:
-        print("\nOpción no válida. Intenta de nuevo.")
+        print("No se añadió ninguna preferencia.")
+
+def procesar_admision():
+    if not sistema.solicitudes:
+        print("No hay solicitudes.")
+        return
+    sistema.procesar_admisiones()
+    print("Admisión procesada.")
+    for s in sistema.solicitudes:
+        if s.grado_asignado:
+            print(f"{s.estudiante.nombre} admitido en {s.grado_asignado.nombre}")
+        else:
+            print(f"{s.estudiante.nombre} no admitido.")
+
+def mostrar_estadisticas():
+    sistema.generar_estadistica()
+
+def menu():
+    while True:
+        print("\n" + "="*40)
+        print("SISTEMA DE ACCESO UNIVERSITARIO")
+        print("1. Registrar estudiante")
+        print("2. Buscar grados (por nombre)")
+        print("3. Crear solicitud")
+        print("4. Procesar admisión")
+        print("5. Ver estadísticas")
+        print("6. Salir")
+        op = input("Elige: ")
+
+        if op == "1":
+            registrar_estudiante()
+        elif op == "2":
+            grado = añadir_grado()
+            buscar_grado(LISTA_UNIVERSIDADES, grado)
+        elif op == "3":
+            crear_solicitud()
+        elif op == "4":
+            procesar_admision()
+        elif op == "5":
+            mostrar_estadisticas()
+        elif op == "6":
+            print("Adiós")
+            break
+        else:
+            print("Opción no válida.")
+
+if __name__ == "__main__":
+    menu()
